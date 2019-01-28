@@ -16,8 +16,21 @@ function isPrime(number) {
   return true;
 }
 
+function isPalindrome(string) {
+  const reversedString = string
+    .toLowerCase()
+    .split("")
+    .reverse()
+    .join("");
+  if (string.toLowerCase() === reversedString) {
+    return true;
+  }
+  return false;
+}
+
 module.exports = {
   sum: sum,
   stringlength: stringlength,
-  isPrime: isPrime
+  isPrime: isPrime,
+  isPalindrome: isPalindrome
 };
