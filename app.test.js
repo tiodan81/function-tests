@@ -4,6 +4,7 @@ const {
   isPrime,
   isPalindrome,
   findString
+  // hasProperty
 } = require("./app");
 
 describe("sum", () => {
@@ -46,21 +47,52 @@ describe("isPrime", () => {
 // `false` if it is not.
 
 describe("isPalindrome", () => {
-  it("checks to verify that the string reads the same forwards and backwards and returns false if not palindrome", () => {
+  it("checks to verify that the string reads the same forwards and backwards and returns true if a  palindrome", () => {
     const result = isPalindrome("RACECAR");
     const expectedResult = true;
     expect(result).toBe(expectedResult);
   });
 });
+
+describe("isPalindrome", () => {
+  it("checks to verify that the string reads the same forwards and backwards and returns false if not a  palindrome", () => {
+    const result = isPalindrome("hellooooo");
+    const expectedResult = false;
+    expect(result).toBe(expectedResult);
+  });
+});
+
 // findString: takes two arguments, an array of strings and a search string,
 // returns `true` if the search string is found in the array and `false` if it isn't.
 
 describe("findString", () => {
-  it("checks the search string against the array of strings to see if there is a match and returns true if match and false if no match", () => {
-    const result = findString("Billy", [
-      ("green", "200", "orange", "blue jean Billy")
-    ]);
+  it("checks the search string against the array of strings to see if there is a match and returns true if match", () => {
+    const result = findString(
+      ["green", "200", "orange", "blue jean Billy"],
+      "Billy"
+    );
     const expectedResult = true;
     expect(result).toBe(expectedResult);
   });
 });
+describe("findString", () => {
+  it("checks the search string against the array of strings and if there is no match it returns false", () => {
+    const result = findString(["anybody", "everybody", "somebody"], "hello");
+    const expectedResult = false;
+    expect(result).toBe(expectedResult);
+  });
+});
+// hasProperty: takes two arguments, an object and a property name, returns `true` if the object has a property with the given name and `false` if it doesn't.
+
+// describe("hasProperty", () => {
+//   it("checks the property name against the object to verify the property name exists and returns true if the object has the specific property name and false if it doesn't.", () => {
+//     const result = hasProperty({ fname: Holly, lname: Tree, age: 39 }, "age");
+//     const expectedResult = true;
+//     expect(result).toBe(expectedResult);
+//   });
+// });
+
+// const girl = { fname: 'Holly', lname: 'Tree', age: 39}
+// girl.age
+// girl['age']
+// const property = 'age'; girl[property]

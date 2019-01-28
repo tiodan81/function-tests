@@ -28,12 +28,16 @@ function isPalindrome(string) {
   return false;
 }
 
-function findString(string, stringArray) {
+function findString(stringArray, string) {
   for (var i = 0; i < stringArray.length; i++) {
     if (stringArray[i].match(string)) return true;
   }
   return false;
 }
+
+// function hasProperty(property, object) {
+//   for (property in object) {}
+// }
 
 module.exports = {
   sum: sum,
