@@ -28,9 +28,17 @@ function isPalindrome(string) {
   return false;
 }
 
+function findString(string, stringArray) {
+  for (var i = 0; i < stringArray.length; i++) {
+    if (stringArray[i].match(string)) return true;
+  }
+  return false;
+}
+
 module.exports = {
   sum: sum,
   stringlength: stringlength,
   isPrime: isPrime,
-  isPalindrome: isPalindrome
+  isPalindrome: isPalindrome,
+  findString: findString
 };
