@@ -62,6 +62,16 @@ function addition(intArray) {
   return sum;
 }
 
+function unique(array) {
+  const uniqueArray = [];
+  array.forEach(function(e) {
+    if (!uniqueArray.includes(e)) {
+      uniqueArray.push(e);
+    }
+  });
+  return uniqueArray;
+}
+
 module.exports = {
   sum: sum,
   stringlength: stringlength,
@@ -71,5 +81,6 @@ module.exports = {
   hasProperty: hasProperty,
   multiplyBy: multiplyBy,
   alphabetize: alphabetize,
-  addition: addition
+  addition: addition,
+  unique: unique
 };
