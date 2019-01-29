@@ -42,11 +42,19 @@ function hasProperty(object, string) {
   return false;
 }
 
+function multiplyBy(numsArray, num) {
+  var newNum = numsArray.map(function(e) {
+    return e * num;
+  });
+  return newNum;
+}
+
 module.exports = {
   sum: sum,
   stringlength: stringlength,
   isPrime: isPrime,
   isPalindrome: isPalindrome,
   findString: findString,
-  hasProperty: hasProperty
+  hasProperty: hasProperty,
+  multiplyBy: multiplyBy
 };

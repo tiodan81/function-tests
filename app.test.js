@@ -4,7 +4,8 @@ const {
   isPrime,
   isPalindrome,
   findString,
-  hasProperty
+  hasProperty,
+  multiplyBy
 } = require("./app");
 
 describe("sum", () => {
@@ -103,5 +104,15 @@ describe("hasProperty", () => {
     );
     const expectedResult = false;
     expect(result).toBe(expectedResult);
+  });
+});
+
+// multiplyBy: takes two arguments, an array of numbers and a number, multiplies all the numbers in the array by the number, and returns the result.
+
+describe("multiplyBy", () => {
+  it("multiplies all the numbers in the array (first argument) by the number (second argument) and returns the result", () => {
+    const result = multiplyBy([1, 2, 3, 4, 5], 5);
+    const expectedResult = [5, 10, 15, 20, 25];
+    expect(result).toEqual(expectedResult);
   });
 });
