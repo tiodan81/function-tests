@@ -6,7 +6,8 @@ const {
   findString,
   hasProperty,
   multiplyBy,
-  alphabetize
+  alphabetize,
+  addition
 } = require("./app");
 
 describe("sum", () => {
@@ -124,6 +125,16 @@ describe("alphabetize", () => {
   it("sorts an array of strings from a to z and returns the new sorted array", () => {
     const result = alphabetize(["orange", "red", "blue", "pink", "yellow"]);
     const expectedResult = ["blue", "orange", "pink", "red", "yellow"];
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+// sum: takes one argument, an array of integers, and returns their sum. Don't worry about decimal numbers.
+
+describe("addition", () => {
+  it("takes an array of integers, adds them up and returns the sum", () => {
+    const result = addition([5, 5, 5, 5, 5]);
+    const expectedResult = 25;
     expect(result).toEqual(expectedResult);
   });
 });

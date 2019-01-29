@@ -43,7 +43,7 @@ function hasProperty(object, string) {
 }
 
 function multiplyBy(numsArray, num) {
-  var newNum = numsArray.map(function(e) {
+  const newNum = numsArray.map(function(e) {
     return e * num;
   });
   return newNum;
@@ -51,6 +51,15 @@ function multiplyBy(numsArray, num) {
 
 function alphabetize(strings) {
   return strings.sort();
+}
+
+function addition(intArray) {
+  let sum = 0;
+  for (let i = 0; i < intArray.length; i++) {
+    sum += intArray[i];
+  }
+
+  return sum;
 }
 
 module.exports = {
@@ -61,5 +70,6 @@ module.exports = {
   findString: findString,
   hasProperty: hasProperty,
   multiplyBy: multiplyBy,
-  alphabetize: alphabetize
+  alphabetize: alphabetize,
+  addition: addition
 };
