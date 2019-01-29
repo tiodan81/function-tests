@@ -35,14 +35,18 @@ function findString(stringArray, string) {
   return false;
 }
 
-// function hasProperty(property, object) {
-//   for (property in object) {}
-// }
+function hasProperty(object, string) {
+  if (object.hasOwnProperty(string)) {
+    return true;
+  }
+  return false;
+}
 
 module.exports = {
   sum: sum,
   stringlength: stringlength,
   isPrime: isPrime,
   isPalindrome: isPalindrome,
-  findString: findString
+  findString: findString,
+  hasProperty: hasProperty
 };

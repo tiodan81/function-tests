@@ -3,8 +3,8 @@ const {
   stringlength,
   isPrime,
   isPalindrome,
-  findString
-  // hasProperty
+  findString,
+  hasProperty
 } = require("./app");
 
 describe("sum", () => {
@@ -84,15 +84,24 @@ describe("findString", () => {
 });
 // hasProperty: takes two arguments, an object and a property name, returns `true` if the object has a property with the given name and `false` if it doesn't.
 
-// describe("hasProperty", () => {
-//   it("checks the property name against the object to verify the property name exists and returns true if the object has the specific property name and false if it doesn't.", () => {
-//     const result = hasProperty({ fname: Holly, lname: Tree, age: 39 }, "age");
-//     const expectedResult = true;
-//     expect(result).toBe(expectedResult);
-//   });
-// });
+describe("hasProperty", () => {
+  it("checks the property name against the object to verify the property name exists and returns true if the object has the specific property name", () => {
+    const result = hasProperty(
+      { fname: "Holly", lname: "Tree", age: "39" },
+      "age"
+    );
+    const expectedResult = true;
+    expect(result).toBe(expectedResult);
+  });
+});
 
-// const girl = { fname: 'Holly', lname: 'Tree', age: 39}
-// girl.age
-// girl['age']
-// const property = 'age'; girl[property]
+describe("hasProperty", () => {
+  it("checks the property name against the object to verify the property name exists and returns false if the object does not have the specific property name", () => {
+    const result = hasProperty(
+      { fname: "Holly", lname: "Tree", age: "39" },
+      "hello"
+    );
+    const expectedResult = false;
+    expect(result).toBe(expectedResult);
+  });
+});
