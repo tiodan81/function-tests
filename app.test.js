@@ -5,7 +5,8 @@ const {
   isPalindrome,
   findString,
   hasProperty,
-  multiplyBy
+  multiplyBy,
+  alphabetize
 } = require("./app");
 
 describe("sum", () => {
@@ -113,6 +114,16 @@ describe("multiplyBy", () => {
   it("multiplies all the numbers in the array (first argument) by the number (second argument) and returns the result", () => {
     const result = multiplyBy([1, 2, 3, 4, 5], 5);
     const expectedResult = [5, 10, 15, 20, 25];
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+// alphabetize: takes one argument, an array of strings, and returns an array with the string sorted alphabetically from a to z.
+
+describe("alphabetize", () => {
+  it("sorts an array of strings from a to z and returns the new sorted array", () => {
+    const result = alphabetize(["orange", "red", "blue", "pink", "yellow"]);
+    const expectedResult = ["blue", "orange", "pink", "red", "yellow"];
     expect(result).toEqual(expectedResult);
   });
 });

@@ -49,6 +49,10 @@ function multiplyBy(numsArray, num) {
   return newNum;
 }
 
+function alphabetize(strings) {
+  return strings.sort();
+}
+
 module.exports = {
   sum: sum,
   stringlength: stringlength,
@@ -56,5 +60,6 @@ module.exports = {
   isPalindrome: isPalindrome,
   findString: findString,
   hasProperty: hasProperty,
-  multiplyBy: multiplyBy
+  multiplyBy: multiplyBy,
+  alphabetize: alphabetize
 };
