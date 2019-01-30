@@ -52,7 +52,6 @@ function alphabetize(strings) {
   return strings.sort();
 }
 
-// right here charlotte.
 function addition(intArray) {
   const sum = intArray.reduce((total, num) => {
     return total + num;
@@ -61,13 +60,13 @@ function addition(intArray) {
 }
 
 function unique(array) {
-  const uniqueArray = [];
-  array.forEach(function(e) {
+  const newArray = array.reduce((uniqueArray, e) => {
     if (!uniqueArray.includes(e)) {
       uniqueArray.push(e);
     }
-  });
-  return uniqueArray;
+    return uniqueArray;
+  }, []);
+  return newArray;
 }
 
 function subTotal(products) {
