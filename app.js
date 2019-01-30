@@ -52,12 +52,11 @@ function alphabetize(strings) {
   return strings.sort();
 }
 
+// right here charlotte.
 function addition(intArray) {
-  let sum = 0;
-  for (let i = 0; i < intArray.length; i++) {
-    sum += intArray[i];
-  }
-
+  const sum = intArray.reduce((total, num) => {
+    return total + num;
+  }, 0);
   return sum;
 }
 
