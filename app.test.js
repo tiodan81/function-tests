@@ -9,8 +9,8 @@ const {
   alphabetize,
   addition,
   unique,
-  quantityXprice,
-  addTax
+  subTotal,
+  grandTotal
 } = require("./app");
 
 describe("sum", () => {
@@ -119,52 +119,52 @@ describe("addition", () => {
 });
 
 describe("unique", () => {
-  it("takes an array of strings, checks to see if the value already exists, if not then push value into new unique array", () => {
+  it("takes an array of strings, checks to see if the value already exists, then returns unique values", () => {
     const result = unique(["1", "1", "hello"]);
     const expectedResult = ["1", "hello"];
     expect(result).toEqual(expectedResult);
   });
 
-  it("takes array of numbers-does the value already exist?, no? then push value into new unique array ", () => {
+  it("takes array of numbers, checks to see if the value already exists, then returns unique values ", () => {
     const result = unique([2, 3, 4, 2]);
     const expectedResult = [2, 3, 4];
     expect(result).toEqual(expectedResult);
   });
 
-  it("takes array of booleans-does the value already exist?, no? then push value into new unique array ", () => {
+  it("takes array of booleans, checks to see if the value already exists, then returns unique values ", () => {
     const result = unique([true, false, false, true, false, false]);
     const expectedResult = [true, false];
     expect(result).toEqual(expectedResult);
   });
 
-  it("takes array of null-does the value already exist?, no? then push value into new unique array ", () => {
+  it("takes array of null, checks to see if the value already exists, then returns a unique value", () => {
     const result = unique([null, null, null, null]);
     const expectedResult = [null];
     expect(result).toEqual(expectedResult);
   });
 
-  it("takes array of undefined-does the value already exist?, no? then push value into new unique array ", () => {
+  it("takes array of undefined, checks to see if the values already exists, then returns a unique value", () => {
     const result = unique([undefined, undefined, undefined]);
     const expectedResult = [undefined];
     expect(result).toEqual(expectedResult);
   });
 
-  it("takes array of non-repeated values-does the value already exist?, no? then push value into new unique array ", () => {
+  it("takes array of non-repeated values, checks to see if the values already exist, then returns same non-repeated values", () => {
     const result = unique(["hello", "hi", "how are ya?", 2, 3, 4]);
     const expectedResult = ["hello", "hi", "how are ya?", 2, 3, 4];
     expect(result).toEqual(expectedResult);
   });
 });
 
-describe("quantityXprice", () => {
+describe("subTotal", () => {
   it("takes an item's price and mulitplies it by the quantity", () => {
-    const result = quantityXprice([{ price: 500, quantity: 3 }]);
+    const result = subTotal([{ price: 500, quantity: 3 }]);
     const expectedResult = 1500;
     expect(result).toEqual(expectedResult);
   });
 
   it("takes two item's prices and mulitplies it by the quantity of eaach unit", () => {
-    const result = quantityXprice([
+    const result = subTotal([
       { price: 500, quantity: 3 },
       { price: 200, quantity: 4 }
     ]);
@@ -173,20 +173,18 @@ describe("quantityXprice", () => {
   });
 
   it("takes zero items and returns 0", () => {
-    const result = quantityXprice([]);
+    const result = subTotal([]);
     const expectedResult = 0;
     expect(result).toEqual(expectedResult);
   });
-});
 
-describe("addTax", () => {
   it("takes the qXp and adds tax rate", () => {
-    const result = addTax(1500, 0.09);
+    const result = grandTotal(1500, 0.09);
     const expectedResult = 1635;
     expect(result).toEqual(expectedResult);
   });
-  it("takes zero and adds tax rate and returns 0", () => {
-    const result = addTax(0, 0.09);
+  it("takes zero items and adds tax rate and returns 0", () => {
+    const result = grandTotal(0, 0.09);
     const expectedResult = 0;
     expect(result).toEqual(expectedResult);
   });

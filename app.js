@@ -8,8 +8,7 @@ function stringlength(string) {
 
 function isPrime(number) {
   for (var i = 2; i <= number / 2; i++) {
-    console.log(i);
-    if (number % i == 0) {
+    if (number % i === 0) {
       return false;
     }
   }
@@ -72,7 +71,7 @@ function unique(array) {
   return uniqueArray;
 }
 
-function quantityXprice(products) {
+function subTotal(products) {
   const subTotal = products.reduce((total, product) => {
     const lineItemTotal = product.price * product.quantity;
     return lineItemTotal + total;
@@ -80,7 +79,7 @@ function quantityXprice(products) {
   return subTotal;
 }
 
-function addTax(subTotal, taxRate) {
+function grandTotal(subTotal, taxRate) {
   const taxes = subTotal * taxRate;
   const grandTotal = subTotal + taxes;
   return grandTotal;
@@ -97,6 +96,6 @@ module.exports = {
   alphabetize: alphabetize,
   addition: addition,
   unique: unique,
-  quantityXprice: quantityXprice,
-  addTax: addTax
+  subTotal: subTotal,
+  grandTotal: grandTotal
 };
