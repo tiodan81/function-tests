@@ -163,7 +163,7 @@ describe("subTotal", () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it("takes two item's prices and mulitplies it by the quantity of eaach unit", () => {
+  it("takes two item's prices and mulitplies it by the quantity of each unit", () => {
     const result = subTotal([
       { price: 500, quantity: 3 },
       { price: 200, quantity: 4 }
@@ -178,7 +178,7 @@ describe("subTotal", () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it("takes the qXp and adds tax rate", () => {
+  it("takes the sub total and adds tax rate", () => {
     const result = grandTotal(1500, 0.09);
     const expectedResult = 1635;
     expect(result).toEqual(expectedResult);
