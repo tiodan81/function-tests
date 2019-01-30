@@ -8,7 +8,9 @@ const {
   multiplyBy,
   alphabetize,
   addition,
-  unique
+  unique,
+  quantityXprice,
+  addTax
 } = require("./app");
 
 describe("sum", () => {
@@ -150,6 +152,42 @@ describe("unique", () => {
   it("takes array of non-repeated values-does the value already exist?, no? then push value into new unique array ", () => {
     const result = unique(["hello", "hi", "how are ya?", 2, 3, 4]);
     const expectedResult = ["hello", "hi", "how are ya?", 2, 3, 4];
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+describe("quantityXprice", () => {
+  it("takes an item's price and mulitplies it by the quantity", () => {
+    const result = quantityXprice([{ price: 500, quantity: 3 }]);
+    const expectedResult = 1500;
+    expect(result).toEqual(expectedResult);
+  });
+
+  it("takes two item's prices and mulitplies it by the quantity of eaach unit", () => {
+    const result = quantityXprice([
+      { price: 500, quantity: 3 },
+      { price: 200, quantity: 4 }
+    ]);
+    const expectedResult = 2300;
+    expect(result).toEqual(expectedResult);
+  });
+
+  it("takes zero items and returns 0", () => {
+    const result = quantityXprice([]);
+    const expectedResult = 0;
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+describe("addTax", () => {
+  it("takes the qXp and adds tax rate", () => {
+    const result = addTax(1500, 0.09);
+    const expectedResult = 1635;
+    expect(result).toEqual(expectedResult);
+  });
+  it("takes zero and adds tax rate and returns 0", () => {
+    const result = addTax(0, 0.09);
+    const expectedResult = 0;
     expect(result).toEqual(expectedResult);
   });
 });
