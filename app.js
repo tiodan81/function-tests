@@ -53,22 +53,20 @@ function alphabetize(strings) {
 }
 
 function addition(intArray) {
-  let sum = 0;
-  for (let i = 0; i < intArray.length; i++) {
-    sum += intArray[i];
-  }
-
+  const sum = intArray.reduce((total, num) => {
+    return total + num;
+  }, 0);
   return sum;
 }
 
 function unique(array) {
-  const uniqueArray = [];
-  array.forEach(function(e) {
+  const newArray = array.reduce((uniqueArray, e) => {
     if (!uniqueArray.includes(e)) {
       uniqueArray.push(e);
     }
-  });
-  return uniqueArray;
+    return uniqueArray;
+  }, []);
+  return newArray;
 }
 
 function subTotal(products) {
