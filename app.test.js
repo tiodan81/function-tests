@@ -191,10 +191,6 @@ describe("subTotal", () => {
   });
 });
 
-// Write a function that returns an array with the numbers from 1 to 100.
-// But for multiples of three return "Fizz" instead of the number and for the multiples of five return "Buzz".
-// For numbers which are multiples of both three and five return "FizzBuzz".
-
 describe("fizzBuzz", () => {
   it("takes start and end numbers and returns the value unless its a 3 or 5 or 15, in such cases returns fizz, buzz or fizzbuzz instead of the number", () => {
     const result = fizzBuzz();
@@ -218,25 +214,3 @@ describe("fizzBuzz", () => {
     expect(result).toEqual(expectedResult);
   });
 });
-
-// describe("findString", () => {
-//   it("checks the search string against the array of strings to see if there is a match and returns true if match", () => {
-//     const result = findString(
-//       ["green", "200", "orange", "blue jean Billy"],
-//       "Billy"
-//     );
-//     const expectedResult = true;
-//     expect(result).toBe(expectedResult);
-//   });
-
-//   it("checks the search string against the array of strings and if there is no match it returns false", () => {
-//     const result = findString(["anybody", "everybody", "somebody"], "hello");
-//     const expectedResult = false;
-//     expect(result).toBe(expectedResult);
-//   });
-// });
-
-// Write a function that will format a string. It will take in two parameters, a format string,
-// and an array of string replacements. The format string will use placeholders of the form "{N}" where N is an integer.
-// The method will replace such placeholders with the Nth item from the array of replacement strings.
-// The function will return the resulting string.
