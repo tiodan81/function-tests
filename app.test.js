@@ -192,7 +192,7 @@ describe("subTotal", () => {
 });
 
 describe("fizzBuzz", () => {
-  it("takes start and end numbers and returns the value unless its a 3 or 5 or 15, in such cases returns fizz, buzz or fizzbuzz instead of the number", () => {
+  it("takes an ending number and returns the value from 1 to the ending number unless its a 3 or 5 or 15, in such cases returns fizz, buzz or fizzbuzz instead of the number", () => {
     const result = fizzBuzz();
     const expectedResult = [
       1,
@@ -213,4 +213,17 @@ describe("fizzBuzz", () => {
     ];
     expect(result).toEqual(expectedResult);
   });
+});
+// Write a function that will format a string. It will take in two parameters,
+// a format string, and an array of string replacements. The format string will use placeholders
+// of the form “{N}” where N is an integer. The method will replace such placeholders with the Nth
+// item from the array of replacement strings. The function will return the resulting string.
+
+describe("formatString", () => {
+  "takes a formatString and stringReplacements, then replaces placeholders with the Nth item in string replacements and returns a new string",
+    () => {
+      const result = formatString(formatString, stringReplacements);
+      const expectedResult = "";
+      expect(result).toBe(expectedResult);
+    };
 });
