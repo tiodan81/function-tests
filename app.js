@@ -83,6 +83,22 @@ function grandTotal(subTotal, taxRate) {
   return grandTotal;
 }
 
+function fizzBuzz() {
+  const newArray = [];
+  for (var i = 1; i < 16; i++) {
+    if (i % 15 === 0) {
+      newArray.push("fizzBuzz");
+    } else if (i % 3 === 0) {
+      newArray.push("Fizz");
+    } else if (i % 5 === 0) {
+      newArray.push("Buzz");
+    } else {
+      newArray.push(i);
+    }
+  }
+  return newArray;
+}
+
 module.exports = {
   sum: sum,
   stringlength: stringlength,
@@ -95,5 +111,6 @@ module.exports = {
   addition: addition,
   unique: unique,
   subTotal: subTotal,
-  grandTotal: grandTotal
+  grandTotal: grandTotal,
+  fizzBuzz: fizzBuzz
 };
