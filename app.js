@@ -98,6 +98,14 @@ function fizzBuzz() {
   }
   return newArray;
 }
+function formatString(format_str, str_replacements) {
+  const regex = /\{\d+\}/g;
+  return format_str.replace(regex, function(placeholder) {
+    const newRegex = /\d+/;
+    const index = placeholder.match(newRegex);
+    return str_replacements[index];
+  });
+}
 
 module.exports = {
   sum: sum,
@@ -112,5 +120,6 @@ module.exports = {
   unique: unique,
   subTotal: subTotal,
   grandTotal: grandTotal,
-  fizzBuzz: fizzBuzz
+  fizzBuzz: fizzBuzz,
+  formatString: formatString
 };
